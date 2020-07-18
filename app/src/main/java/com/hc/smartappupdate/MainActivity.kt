@@ -7,6 +7,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
+import android.widget.TextView
 import com.itheima.updatelib.PatchUtil
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.doAsync
@@ -14,7 +15,6 @@ import org.jetbrains.anko.sdk27.coroutines.onClick
 import java.io.File
 
 class MainActivity : AppCompatActivity() {
-
 
     //初始化加载进度
     private val mDialog:ProgressDialog by lazy {
@@ -25,14 +25,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        textView.setText("这是 1.0 版本")
+
         //参考 https://github.com/jiyouliang2/SmartUpdateDemo
         
         //kotlin 不用 findViewById，通过 Anco 回调
         btn_update.onClick {
             update()
         }
-        
-
     }
 
 
